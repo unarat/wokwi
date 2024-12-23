@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Tristan SMAGGHE",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -39.62, "left": -222.95, "attrs": {} },
+    { "type": "chip-i2c-8bit", "id": "chip1", "top": 62.48, "left": 121.08, "attrs": {} },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -315.59,
+      "left": -61.94,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "chip1:VCC", "esp:3V3", "red", [ "h27.83", "v128.93", "h-374.95", "v-81.56" ] ],
+    [ "chip1:GND", "esp:GND.1", "black", [ "h19.89", "v111.38", "h-357.47", "v-87.91" ] ],
+    [ "chip1:SCL", "esp:D22", "green", [ "h11.94", "v91.19", "h-342.11", "v-195.95" ] ],
+    [ "chip1:SDA", "esp:D21", "green", [ "h6.12", "v73.65", "h-327.81", "v-153.58" ] ],
+    [ "keypad1:R1", "chip1:R1", "green", [ "v0" ] ],
+    [ "keypad1:R2", "chip1:R2", "green", [ "v0" ] ],
+    [ "keypad1:R3", "chip1:R3", "green", [ "v0" ] ],
+    [ "keypad1:R4", "chip1:R4", "green", [ "v0" ] ],
+    [ "keypad1:C1", "chip1:C1", "green", [ "v0" ] ],
+    [ "keypad1:C2", "chip1:C2", "green", [ "v0" ] ],
+    [ "keypad1:C3", "chip1:C3", "green", [ "v37.24", "h172.28", "v63.02" ] ],
+    [ "keypad1:C4", "chip1:C4", "green", [ "v28.24", "h168.88", "v58.25" ] ]
+  ]
+}
